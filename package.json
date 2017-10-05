@@ -1,0 +1,32 @@
+{
+  "name": "cachemitter",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpwilliams/cachemitter.git"
+  },
+  "keywords": [
+    "esb",
+    "service",
+    "bus",
+    "emitter",
+    "eventemitter",
+    "past",
+    "last",
+    "cache"
+  ],
+  "author": "Jack Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpwilliams/cachemitter/issues"
+  },
+  "homepage": "https://github.com/jpwilliams/cachemitter#readme",
+  "dependencies": {
+    "eventemitter3": "^2.0.3"
+  }
+}
