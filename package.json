@@ -1,5 +1,5 @@
 {
-  "name": "cachemitter",
+  "name": "acclimate",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jpwilliams/cachemitter.git"
+    "url": "git+https://github.com/jpwilliams/acclimate.git"
   },
   "keywords": [
     "esb",
@@ -23,9 +23,9 @@
   "author": "Jack Williams",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jpwilliams/cachemitter/issues"
+    "url": "https://github.com/jpwilliams/acclimate/issues"
   },
-  "homepage": "https://github.com/jpwilliams/cachemitter#readme",
+  "homepage": "https://github.com/jpwilliams/acclimate#readme",
   "dependencies": {
     "eventemitter3": "^2.0.3"
   }
