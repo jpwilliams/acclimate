@@ -67,6 +67,7 @@ class Acclimate extends EventEmitter {
   }
 }
 
-const acclimate = new Acclimate()
-
-module.exports = acclimate
+module.exports = {
+  Store: new Acclimate(),
+  Acclimate: Acclimate
+}
