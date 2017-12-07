@@ -22,6 +22,10 @@ class Acclimate extends EventEmitter {
     return new Acclimate()
   }
 
+  get (eventName) {
+    return this.cache[eventName]
+  }
+
   emit (eventName, ...args) {
     this._resetResults()
     this.cache[eventName] = args
