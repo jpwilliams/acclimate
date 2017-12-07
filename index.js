@@ -34,32 +34,32 @@ class Acclimate extends EventEmitter {
     return this.results
   }
 
-  on (eventName, callback) {
-    if (this.cache.hasOwnProperty(eventName)) {
+  on (eventName, callback, useCache = true) {
+    if (useCache && this.cache.hasOwnProperty(eventName)) {
       callback(...this.cache[eventName])
     }
 
     return super.on(eventName, this._wrap(callback))
   }
 
-  once (eventName, callback) {
-    if (this.cache.hasOwnProperty(eventName)) {
+  once (eventName, callback, useCache = true) {
+    if (useCache && this.cache.hasOwnProperty(eventName)) {
       callback(...this.cache[eventName])
     }
 
     return super.once(eventName, this._wrap(callback))
   }
 
-  prependListener (eventName, callback) {
-    if (this.cache.hasOwnProperty(eventName)) {
+  prependListener (eventName, callback, useCache = true) {
+    if (useCache && this.cache.hasOwnProperty(eventName)) {
       callback(...this.cache[eventName])
     }
 
     return super.prependListener(eventName, this._wrap(callback))
   }
 
-  prependOnceListener (eventName, callback) {
-    if (this.cache.hasOwnProperty(eventName)) {
+  prependOnceListener (eventName, callback, useCache = true) {
+    if (useCache && this.cache.hasOwnProperty(eventName)) {
       callback(...this.cache[eventName])
     }
 
