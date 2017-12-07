@@ -31,7 +31,7 @@ class Acclimate extends EventEmitter {
     this.cache[eventName] = args
     super.emit(eventName, ...args)
 
-    return this.results.slice()
+    return this.results
   }
 
   on (eventName, callback) {
