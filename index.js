@@ -18,10 +18,6 @@ class Acclimate extends EventEmitter {
     return fn && ((...args) => this._pushResult(fn(...args)))
   }
 
-  new () {
-    return new Acclimate()
-  }
-
   get (eventName) {
     return this.cache[eventName]
   }
