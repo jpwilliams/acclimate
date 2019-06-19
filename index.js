@@ -4,6 +4,7 @@ class Acclimate extends EventEmitter {
   constructor (props) {
     super(props)
     this.cache = {}
+    this.fns = new WeakMap()
   }
 
   _pushResult (result) {
@@ -35,7 +36,9 @@ class Acclimate extends EventEmitter {
       callback(...this.cache[eventName])
     }
 
-    return super.on(eventName, this._wrap(callback))
+    this.fns.set(callback, this._wrap(callback))
+
+    return super.on(eventName, this.fns.get(callback))
   }
 
   once (eventName, callback, useCache = true) {
@@ -51,7 +54,9 @@ class Acclimate extends EventEmitter {
       callback(...this.cache[eventName])
     }
 
-    return super.prependListener(eventName, this._wrap(callback))
+    this.fns.set(callback, this._wrap(callback))
+
+    return super.prependListener(eventName, this.fns.get(callback))
   }
 
   prependOnceListener (eventName, callback, useCache = true) {
@@ -60,6 +65,16 @@ class Acclimate extends EventEmitter {
     }
 
     return super.prependOnceListener(eventName, this._wrap(callback))
+  }
+
+  removeListener (eventName, listener) {
+    const wrappedFn = this.fns.get(listener)
+
+    if (wrappedFn) {
+      return super.removeListener(eventName, wrappedFn)
+    }
+
+    return this
   }
 }
 
